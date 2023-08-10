@@ -19,50 +19,16 @@ return {
     underline = true,
   },
   lsp = {
-    config = {
-      emmet_ls = {
-        filetypes = {
-          "astro",
-          "css",
-          "eruby",
-          "html",
-          "htmldjango",
-          "javascriptreact",
-          "less",
-          "php",
-          "pug",
-          "sass",
-          "scss",
-          "svelte",
-          "typescriptreact",
-          "vue",
-        },
-      },
-    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
-        allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
-        },
-        ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
-        },
-      },
-      disabled = { -- disable formatting capabilities for the listed language servers
-        -- "sumneko_lua",
       },
       timeout_ms = 2000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
-    },
+    servers = {},
   },
   -- Configure require("lazy").setup() options
   lazy = {
@@ -106,34 +72,10 @@ return {
         vim.cmd "setlocal cursorcolumn"
         vim.cmd "setlocal cursorline"
       end,
-      render = "notification#render",
+      render = "default",
       fps = 60,
       minimum_width = 5000,
       top_down = false,
     }
-
-    -- vim.cmd ":highlight Normal guibg=NONE"
-    -- make background color transparent
-    -- require("copilot").setup {
-    --   panel = {
-    --     auto_refresh = false,
-    --     keymap = {
-    --       accept = "<C-j>",
-    --       jump_prev = "[[",
-    --       jump_next = "]]",
-    --       refresh = "gr",
-    --       open = "<M-CR>",
-    --     },
-    --   },
-    --   suggestion = {
-    --     auto_trigger = true,
-    --     keymap = {
-    --       accept = "<C-j>",
-    --       prev = "<C-[>",
-    --       next = "<C-]>",
-    --       dismiss = "<C-]>",
-    --     },
-    --   },
-    -- }
   end,
 }
