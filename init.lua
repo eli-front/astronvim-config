@@ -40,42 +40,4 @@ return {
       },
     },
   },
-  -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
-  polish = function()
-    require("notify").setup {
-      background_colour = "#000000",
-      level = "info",
-      timeout = 1000,
-      max_width = 80,
-      max_height = 80,
-      icons = {
-        ERROR = "",
-        WARN = "",
-        INFO = "",
-        DEBUG = "",
-        TRACE = "✎",
-      },
-      stages = {
-        ERROR = "background",
-        WARN = "background",
-        INFO = "background",
-        DEBUG = "background",
-        TRACE = "background",
-      },
-      on_open = function()
-        vim.cmd "setlocal nocursorcolumn"
-        vim.cmd "setlocal nocursorline"
-      end,
-      on_close = function()
-        vim.cmd "setlocal cursorcolumn"
-        vim.cmd "setlocal cursorline"
-      end,
-      render = "default",
-      fps = 60,
-      minimum_width = 5000,
-      top_down = false,
-    }
-  end,
 }

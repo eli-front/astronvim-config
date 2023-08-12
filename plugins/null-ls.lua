@@ -12,12 +12,11 @@ return {
       -- Set a formatter
       null_ls.builtins.formatting.prettier,
       null_ls.builtins.diagnostics.eslint_d,
-      null_ls.builtins.diagnostics.tsc,
+      -- null_ls.builtins.diagnostics.tsc,
     }
 
     config.on_attach = require("astronvim.utils.lsp").on_attach
 
     return config -- return final config table
   end,
-  -- opts = function() return { on_attach = require("astronvim.utils.lsp").on_attach } end,
 }
