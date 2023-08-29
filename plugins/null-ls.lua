@@ -13,6 +13,12 @@ return {
       null_ls.builtins.formatting.prettier,
       null_ls.builtins.diagnostics.eslint_d,
       -- null_ls.builtins.diagnostics.tsc,
+      -- python formatting
+      null_ls.builtins.diagnostics.pylint.with {
+        diagnostics_postprocess = function(diagnostic) diagnostic.code = diagnostic.message_id end,
+      },
+      null_ls.builtins.formatting.isort,
+      null_ls.builtins.formatting.black,
     }
 
     config.on_attach = require("astronvim.utils.lsp").on_attach
