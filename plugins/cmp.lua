@@ -9,6 +9,7 @@ return {
   },
   {
     "jackieaskins/cmp-emmet",
+    install = "npm i -g emmet-ls",
     build = "npm run release",
     after = "hrsh7th/nvim-cmp",
   },
@@ -113,7 +114,6 @@ return {
           {
             name = "emmet",
             priority = 900,
-            max_item_count = 5,
           },
           { name = "vsnip", priority = 800 },
           { name = "luasnip", priority = 750 },

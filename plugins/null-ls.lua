@@ -19,6 +19,8 @@ return {
       },
       null_ls.builtins.formatting.isort,
       null_ls.builtins.formatting.black,
+      -- setup c
+      null_ls.builtins.formatting.clang_format,
     }
 
     config.on_attach = require("astronvim.utils.lsp").on_attach
